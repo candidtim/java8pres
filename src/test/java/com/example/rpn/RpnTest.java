@@ -6,21 +6,22 @@ import static org.junit.Assert.*;
 
 public class RpnTest
 {
-  private Calculator calculator = new RecursiveCalculator(AlgebraicOperators.OPERATORS);
+  private Calculator calculator = new ReduceCalculator(AlgebraicOperators.OPERATORS);
+  // private Calculator calculator = new RecursiveCalculator(AlgebraicOperators.OPERATORS);
 
   @Test
   public void testOperators()
   {
-    assertEquals( 5.0, calculator.calculate("2 3 +").getRight(), 0.01);
-    assertEquals(-1.0, calculator.calculate("2 3 -").getRight(), 0.01);
-    assertEquals( 6.0, calculator.calculate("2 3 *").getRight(), 0.01);
-    assertEquals(0.66, calculator.calculate("2 3 /").getRight(), 0.01);
+    assertEquals( 5.0, calculator.calculate("2 3 +").right().value(), 0.01);
+    assertEquals(-1.0, calculator.calculate("2 3 -").right().value(), 0.01);
+    assertEquals( 6.0, calculator.calculate("2 3 *").right().value(), 0.01);
+    assertEquals(0.66, calculator.calculate("2 3 /").right().value(), 0.01);
   }
 
   @Test
   public void testExpressions()
   {
-    assertEquals(-4.0, calculator.calculate("10 4 3 + 2 * -").getRight(), 0.01);
+    assertEquals(-4.0, calculator.calculate("10 4 3 + 2 * -").right().value(), 0.01);
   }
 
   @Test

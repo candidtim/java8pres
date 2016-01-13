@@ -7,7 +7,10 @@ repositories {
 }
 
 dependencies {
-    testCompile 'junit:junit:4.12'
+  compile "org.functionaljava:functionaljava:4.4"
+  compile "org.functionaljava:functionaljava-java8:4.4"
+  compile "org.functionaljava:functionaljava-quickcheck:4.4"
+  testCompile 'junit:junit:4.12'
 }
 
 sourceSets {
